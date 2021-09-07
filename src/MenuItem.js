@@ -1,9 +1,12 @@
 import React from 'react'
 
-export const MenuItem = ({title, category, price, img, desc,}) => {
+export const MenuItem = (props) => {
+    const {title, category, price, img, desc} = props;
+
+
     return (
         <li className="menu-item" data-category={category}>
-            <img src={img} alt="" />
+            <img src={img} alt={title} />
             <div className="item__info">
             <header className="item__header">
                 <h2 className="item__header__title">{title}</h2>
@@ -11,6 +14,6 @@ export const MenuItem = ({title, category, price, img, desc,}) => {
             </header>
             <p className="item__header__text">{desc}</p>
             </div>
-      </li>
+        </li>
     )
 }
